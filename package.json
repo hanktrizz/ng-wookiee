@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier:check": "prettier --config .prettierrc --check \"src/**/*.{ts,css,html}\""
   },
   "private": true,
   "dependencies": {
@@ -47,5 +48,11 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "lint-staged": "^11.2.2",
     "typescript": "~4.3.5"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }
