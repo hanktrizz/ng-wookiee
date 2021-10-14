@@ -9,11 +9,10 @@ import { AppMaterialModule } from './core/app-material/app-material.module';
 
 import { AppConfig, APP_CONFIG } from './app.config';
 import { AppRoutingModule } from './app.routing.module';
-import { HomeComponent } from './modules/landing/home/home.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 @NgModule({
-    declarations: [AppComponent, LayoutComponent, HomeComponent, PageNotFoundComponent],
+    declarations: [AppComponent, LayoutComponent, PageNotFoundComponent],
     imports: [BrowserModule, BrowserAnimationsModule, LayoutModule, AppMaterialModule, AppRoutingModule],
     providers: [
         {
