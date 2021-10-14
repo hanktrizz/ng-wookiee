@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './modules/landing/home/home.component';
 
 const appRoutes: Routes = [
     { path: 'landing', component: HomeComponent },
