@@ -12,6 +12,7 @@ export interface IAppConfig {
     AppLogoResourceUrl: string;
     ApplicationTitle: string;
     PrimaryNavigationConfig: ILink[];
+    RetryPolicy: number;
 }
 
 export const AppConfig: IAppConfig = {
@@ -19,6 +20,7 @@ export const AppConfig: IAppConfig = {
     AppLogoResourceUrl: environment.LOGO_URL,
     ApplicationTitle: 'Ng Wookiee',
     PrimaryNavigationConfig: routeConfig,
+    RetryPolicy: 2,
 };
 
 export let APP_CONFIG = new InjectionToken<IAppConfig>('app.config');

@@ -10,7 +10,9 @@ import { AppMaterialModule } from './core/app-material/app-material.module';
 import { AppConfig, APP_CONFIG } from './app.config';
 import { AppRoutingModule } from './app.routing.module';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor } from './shared/services/error-interceptor.service';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
     declarations: [AppComponent, LayoutComponent, PageNotFoundComponent],
@@ -21,11 +23,17 @@ import { HttpClientModule } from '@angular/common/http';
         AppMaterialModule,
         AppRoutingModule,
         HttpClientModule,
+        ToastrModule.forRoot(),
     ],
     providers: [
         {
             provide: APP_CONFIG,
             useValue: AppConfig,
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptor,
+            multi: true,
         },
     ],
     bootstrap: [AppComponent],
