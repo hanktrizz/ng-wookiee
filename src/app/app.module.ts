@@ -10,10 +10,18 @@ import { AppMaterialModule } from './core/app-material/app-material.module';
 import { AppConfig, APP_CONFIG } from './app.config';
 import { AppRoutingModule } from './app.routing.module';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [AppComponent, LayoutComponent, PageNotFoundComponent],
-    imports: [BrowserModule, BrowserAnimationsModule, LayoutModule, AppMaterialModule, AppRoutingModule],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        LayoutModule,
+        AppMaterialModule,
+        AppRoutingModule,
+        HttpClientModule,
+    ],
     providers: [
         {
             provide: APP_CONFIG,
