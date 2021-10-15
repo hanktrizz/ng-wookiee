@@ -1,1 +1,21 @@
-<p>character-detail works!</p>
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+<mat-tab-group>
+    <mat-tab label="Basic Info">
+        <ng-template matTabContent>
+            <mat-list>
+                <ng-container *ngFor="let attributeEntries of character$ | async">
+                    <mat-list-item>
+                        <span class="label">{{attributeEntries[0] | titlecase | stripUnderscore}}</span>
+                        <span class="value">{{attributeEntries[1]}}</span>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                </ng-container>
+            </mat-list>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Metadata">
+        <ng-template matTabContent>
+            Extra stuff goes here :)
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

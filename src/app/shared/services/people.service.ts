@@ -18,6 +18,11 @@ export class PeopleService implements IResourceService<IPeople> {
         return this.http.get<IDataPayload>(this.getPeopleEndpoint).pipe(map((result) => result.results as IPeople[]));
     }
 
+    getOne(id: string): Observable<IPeople> {
+        const url = `${this.getPeopleEndpoint}/${id}`;
+        return this.http.get<IPeople>(url);
+    }
+
     getOneByRawUrl(url: string): Observable<IPeople> {
         return this.http.get<IPeople>(url);
     }
