@@ -1,0 +1,18 @@
+{
+    "DASHBOARD": {
+        "LABEL": "Dashboard",
+        "LANDING_CARDS": {
+            "UNIVERSE_CARD_LABEL": "Star Wars Universe",
+            "PLANET_CARD_LABEL": "Planets",
+            "FEATURED_CHARACTER_CARD_LABEL": "Featured Character",
+            "QUICK_STATS_CARD_LABEL": "Quick Stats"
+        }
+    },
+    "CHARACTERS": {
+        "LABEL": "Star Wars Characters",
+        "CHARACTER_DETAILS_TABS": {
+            "BASIC_TAB": "Basic Info",
+            "METADATA_TAB": "Metadata"
+        }
+    }
+}
