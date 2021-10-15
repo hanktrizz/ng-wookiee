@@ -12,7 +12,7 @@ import { IDataPayload } from '../interfaces/resource.interface';
     providedIn: 'root',
 })
 export class FilmService implements IResourceService<IFilm> {
-    private getFilmsEndpoint = `${this.appConfig.StarWarsApiBaseUrl}/films`;
+    private getFilmsEndpoint = `${this.appConfig.StarWarsApiBaseUrl}films`;
     constructor(@Inject(APP_CONFIG) private appConfig: IAppConfig, private http: HttpClient) {}
 
     getMany(): Observable<IFilm[]> {
